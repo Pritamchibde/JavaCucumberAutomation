@@ -14,37 +14,16 @@ public class WebBrowser {
    @Before
 	public static void Initialize()
 	{
-		DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
-capabilities.setCapability(enableNativeEvents);
-		//capabilities.setCapability(CapabilityType.BROWSER_NAME, "IE");
-		capabilities.setCapability(InternetExplorerDriver.
-				INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true);
-		capabilities.setCapability(capabilities.);
-
-
-		System.setProperty("webdriver.ie.driver", "C:\\IEDriverServer.exe");
-
-		//it is used to initialize the IE driver
-		WebDriver driver = new InternetExplorerDriver(capabilities);
-
+		System.setProperty("webdriver.ie.driver","C:\\Driver\\IEDriverServer.exe");
+		DesiredCapabilities caps = new DesiredCapabilities();
+		caps.setCapability("nativeEvents", false);
+		caps.setCapability("ensureCleanSession",true);
+		driver=new InternetExplorerDriver(caps);
 		driver.manage().window().maximize();
-
-		driver.get("http://gmail.com");
-
-
-
-		InternetExplorerOptions options= new InternetExplorerOptions();
-		options.enableNativeEvents(0);
-		options.enableNativeEvents()=false;
-		options.ignoreZoomSettings()=true;
-		 System.setProperty("webdriver.ie.driver","C:\\Driver\\IEDriverServer.exe");
-
-		 driver=new InternetExplorerDriver();
-		driver.manage().window().maximize();
-         driver.manage().timeouts().implicitlyWait(60000, TimeUnit.MILLISECONDS);
-         driver.manage().timeouts().setScriptTimeout(60000, TimeUnit.MILLISECONDS);
-         driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
-	}
+		driver.manage().timeouts().implicitlyWait(60000, TimeUnit.MILLISECONDS);
+		driver.manage().timeouts().setScriptTimeout(60000, TimeUnit.MILLISECONDS);
+		driver.manage().timeouts().pageLoadTimeout(60000, TimeUnit.MILLISECONDS);
+		}
 	
    @After
 	public static void TearDown()

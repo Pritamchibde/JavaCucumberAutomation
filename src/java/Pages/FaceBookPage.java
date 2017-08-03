@@ -23,7 +23,7 @@ public class FaceBookPage {
     @FindBy(how = How.XPATH, using = "//span[text()='Create a Post']")
     public WebElement CreatePostBTN ;
 
-    @FindBy(how = How.XPATH, using = "//div[@class='_1mf _1mj']/span/br/parent::span")
+    @FindBy(how = How.XPATH, using = "//*[@id=\"placeholder-18alg\"]")
     public WebElement PostTextBox ;
 
     @FindBy(how = How.XPATH, using = "//span[text()='Post']/parent::button")
