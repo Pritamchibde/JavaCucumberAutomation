@@ -42,19 +42,19 @@ public class TicketShalaSteps extends Global {
         String CheckIn = ft.format(cal.getTime());
         cal.add(Calendar.DATE, 3);
         String CheckOut = ft.format(cal.getTime());
-        extension.SendKeys(By.id("checkin"),CheckIn);
-        extension.SendKeys(By.id("checkout"),CheckOut);
+        extension.SendKeys(By.id("checkin"), CheckIn);
+        extension.SendKeys(By.id("checkout"), CheckOut);
     }
 
     @And("^Select \"([^\"]*)\" rooms and \"([^\"]*)\" guests$")
     public void selectRoomsAndGuests(String arg0, String arg1) throws Throwable {
-        extension.SelectElementByText(By.id("room"),"2 Rooms");
-        extension.SelectElementByText(By.id("room"),"4 Guests");
+        extension.SelectElementByText(By.id("room"), "2 Rooms");
+        extension.SelectElementByText(By.id("room"), "4 Guests");
     }
 
     @And("^Click on Search$")
     public void clickOnSearch() throws Throwable {
-       extension.Click(By.xpath("//button[contains(text(),'Search')]"));
+        extension.Click(By.xpath("//button[contains(text(),'Search')]"));
     }
 
 }

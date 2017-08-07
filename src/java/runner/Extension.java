@@ -12,7 +12,7 @@ public class Extension {
     {
         try
         {
-            WebDriverWait wait = new WebDriverWait(WebBrowser.driver, 60);
+            WebDriverWait wait = new WebDriverWait(WebBrowser.driver, 90);
             wait.until(ExpectedConditions.visibilityOfElementLocated(Locator));
             wait.until(ExpectedConditions.presenceOfElementLocated(Locator));
         }
