@@ -27,7 +27,7 @@ public class FaceBookSteps extends Global {
     @When("^I post a message on the wall$")
     public void iPostAMessageOnTheWall() throws Throwable {
         extension.Click(By.xpath("//span[text()='Create a Post']"));
-        extension.SendKeys(By.xpath("//*[@id=\"placeholder-18alg\"]"),"Hello World!!");
+        extension.SendKeys(By.name("xhpc_message"),"Hello World!!");
         extension.Click(By.xpath("//span[text()='Post']/parent::button"));
     }
 
